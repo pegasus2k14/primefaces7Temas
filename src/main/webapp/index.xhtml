@@ -11,34 +11,42 @@
     </h:head>
 
     <h:body>
-        <p:panelGrid columns="2">
-            <h:outputText value="Nombre"/>
-            <h:inputText value="Name"/>
-            <h:outputText value="password"/>
-            <p:password value="password"/>
-            <h:outputText value="Lista desplegable"/>
-            <p:selectOneMenu value="#" style="width: 125px">
-                <f:selectItem itemLabel="Opcion 1" itemValue=""/>
-                <f:selectItem itemLabel="Opcion 2" itemValue=""/>
-                <f:selectItem itemLabel="Opcion 3" itemValue=""/>
-                <f:selectItem itemLabel="Opcion 4" itemValue=""/>
-            </p:selectOneMenu>
-            <h:outputText value="Un boton"/>
-            <p:commandButton value="submit"/>
-            <h:outputText value="DataTable"/>
-            <p:dataTable>
-                <p:column headerText="Columna 1">
+        <h:form>  
+            <p:panelGrid columns="2">
+                <h:outputText value="Cambiar tema"/>
+                <p:themeSwitcher value="#{currentUser.temaSeleccionado}">
+                    <p:ajax/>  
+                    <f:selectItem itemLabel="Seleccione el tema" itemValue="" />
+                    <f:selectItems value="#{themedao.themeNames}" var="theme" itemLabel="#{theme}" itemValue="#{theme}"/>
+                </p:themeSwitcher>
+                <h:outputText value="Nombre"/>
+                <h:inputText value="Name"/>
+                <h:outputText value="password"/>
+                <p:password value="password"/>
+                <h:outputText value="Lista desplegable"/>
+                <p:selectOneMenu value="#" style="width: 125px">
+                    <f:selectItem itemLabel="Opcion 1" itemValue="Opcion 1"/>
+                    <f:selectItem itemLabel="Opcion 2" itemValue="Opcion 2"/>
+                    <f:selectItem itemLabel="Opcion 3" itemValue="Opcion 3"/>
+                    <f:selectItem itemLabel="Opcion 4" itemValue="Opcion 4"/>
+                </p:selectOneMenu>
+                <h:outputText value="Un boton"/>
+                <p:commandButton value="submit"/>
+                <h:outputText value="DataTable"/>
+                <p:dataTable>
+                    <p:column headerText="Columna 1">
 
-                </p:column>
-                <p:column headerText="Columna 2">
+                    </p:column>
+                    <p:column headerText="Columna 2">
 
-                </p:column>
-                <p:column headerText="Columna 3">
+                    </p:column>
+                    <p:column headerText="Columna 3">
 
-                </p:column>
+                    </p:column>
 
-            </p:dataTable>
-        </p:panelGrid>
+                </p:dataTable>
+            </p:panelGrid>
+        </h:form>    
     </h:body>
 </html>
 

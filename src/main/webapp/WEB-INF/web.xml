@@ -27,7 +27,7 @@
     <!-- Tema de la aplicacion --> 
     <context-param>
         <param-name>primefaces.THEME</param-name>
-        <param-value>nova-colored</param-value>
+        <param-value>#{currentUser.temaSeleccionado}</param-value>
     </context-param>
     
     <session-config>
